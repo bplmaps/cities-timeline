@@ -1,0 +1,31 @@
+html, body {
+  padding: 0px;
+  margin: 0px;
+}
+
+#app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+$smaller-sizes: 0.9em !important;
+
+.object-title {
+  font-size: $smaller-sizes;
+  font-style: italic;
+}
+
+.object-creator {
+  font-size: $smaller-sizes;
+}
+
+.contributing-institution {
+  font-size: $smaller-sizes;
+  background-color: #ddd;
+  display: inline-block;
+  border-radius: 2px;
+  padding: 2px 4px;
+}

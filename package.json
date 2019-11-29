@@ -1,0 +1,22 @@
+{
+  "name": "city-timeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "airtable": "^0.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.7"
+  }
+}
