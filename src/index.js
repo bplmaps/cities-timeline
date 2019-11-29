@@ -1,7 +1,6 @@
 import './styles.scss';
 
 import Airtable from 'airtable';
-import { TLSSocket } from 'tls';
 
 var database = new Airtable({apiKey: 'key10KeIIPJpM8npJ'}).base('appFHShc770eIgtu9');
 
@@ -21,6 +20,8 @@ function parseSlide(s) {
     var explodedDate = s.get('Position Date').split('-')
     var jsonDate = {year: +explodedDate[0], month: +explodedDate[1], day: +explodedDate[2] }
 
+    var thumbnail = s.get('IIIF Endpoint') ? `${s.get('IIIF Endpoint')}/square/500,/0/default.jpg` : '';
+
     return {
         unique_id: s.get('ID'),
         text: {
@@ -32,7 +33,7 @@ function parseSlide(s) {
         media: {
             url: s.get('Image URL'),
             link: s.get('Repository URL'),
-            thumbnail: `${s.get('IIIF Endpoint')}/square/500,/0/default.jpg`
+            thumbnail: thumbnail
         }
     }
 
