@@ -1,31 +1,148 @@
+@import url("https://use.typekit.net/vyz0urp.css");
+
 html, body {
   padding: 0px;
   margin: 0px;
 }
 
-#app {
+#wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-$smaller-sizes: 0.9em !important;
+header { 
+  height: auto;
+  font-family: 'Helvetica', sans-serif;
+  width: 100%;
+  background-color: rgba(236,236,228,1);
+}
+
+h1 {
+  font-size: 1.2em;
+  padding: 0;
+  margin: 10px 20px;
+}
+
+h2.tl-headline-title {
+  margin-bottom: 18px;
+}
+
+.tl-text-content {
+  font-family: williams-caslon-text, 'Georgia', serif;
+}
+
+.tl-text-content p {
+  font-size: 17px;
+  color: #333;
+}
+
+.tl-text-content p strong {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 80%;
+  letter-spacing: 1.2px;
+}
+
+.tl-text ul {
+  margin-bottom: 16px !important;
+}
+
+.tl-headline-date {
+  display: none !important;
+}
+
+#app {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+p.citation {
+  line-height: 1.3em;
+  font-size: 0.9em;
+}
 
 .object-title {
-  font-size: $smaller-sizes;
   font-style: italic;
 }
 
-.object-creator {
-  font-size: $smaller-sizes;
+.object-dimensions {
+  font-size: 0.75em;
 }
 
-.contributing-institution {
-  font-size: $smaller-sizes;
-  background-color: #ddd;
+.repository-url {
+  margin-top: 8px;
   display: inline-block;
+  font-family: 'Helvetica','Arial',sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+  background-color: rgb(230, 235, 243);
   border-radius: 2px;
   padding: 2px 4px;
+  text-decoration: none !important;
+}
+
+.repository-url:hover {
+  background-color: rgb(206, 221, 245);
+  color: rgb(76, 88, 107) !important;
+}
+
+#zoom-container-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(49, 49, 49, 0.9);
+  z-index: 9999;
+  display: none;
+}
+
+#zoom-container-inner {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  background-color: black;
+  border-radius: 9px;
+  padding: 10px;
+}
+
+#zoom-viewer-frame {
+  width: 100%;
+  height: 100%;
+}
+
+#zoom-viewer {
+  height: 100%;
+  width: 100%;
+}
+
+#zoom-closer {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: white;
+  font-family: 'Helvetica',sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.zoom-button {
+  background-color: rgb(65, 100, 78);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 3px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
 }
