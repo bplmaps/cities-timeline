@@ -1,8 +1,11 @@
 @import url("https://use.typekit.net/vyz0urp.css");
 
+$serif: williams-caslon-text, 'Georgia', serif;
+
 html, body {
   padding: 0px;
   margin: 0px;
+  font-family: $serif;
 }
 
 #wrapper {
@@ -17,15 +20,25 @@ html, body {
 
 header { 
   height: auto;
-  font-family: 'Helvetica', sans-serif;
+  // font-family: 'Helvetica', sans-serif;
   width: 100%;
   background-color: rgba(236,236,228,1);
 }
 
+header #collection-filter {
+  float: right;
+  margin: 10px 20px;
+}
+
 h1 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 0;
   margin: 10px 20px;
+  display: inline-block;
+  float: left;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 0.03em;
 }
 
 h2.tl-headline-title {
@@ -33,7 +46,7 @@ h2.tl-headline-title {
 }
 
 .tl-text-content {
-  font-family: williams-caslon-text, 'Georgia', serif;
+  font-family: $serif;
 }
 
 .tl-text-content p {
@@ -54,6 +67,14 @@ h2.tl-headline-title {
 
 .tl-headline-date {
   display: none !important;
+}
+
+.tl-text .tl-headline {
+  font-family: $serif;
+  font-weight: 300;
+  padding: 0 0 6px 0;
+  border-bottom: 3px solid rgba(27, 23, 3, 0.747);
+  margin: 0 0 9px 0;
 }
 
 #app {
