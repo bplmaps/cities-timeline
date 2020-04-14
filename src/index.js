@@ -97,20 +97,21 @@ function initialize(slides) {
 
             <p>Looking at maps helps us to understand the changing geography of urban life. Maps didn’t just serve as snapshots of how cities looked at one moment in time; in the form of plans, maps were also used to build, speculate, and fight over urban form. Historical maps reflect cities’ ethnic and economic transformations, systems of domination and oppression, sites of monumentality and squalor. They capture good times and bad, expansion, decay, and destruction. City dwellers take great pride in their cities, as part of a shared sense of place that is part of a historical trajectory. Maps tell the stories of a city’s past, present—and perhaps its future.</p>
             
-            <p><strong>Mapping a World of Cities</strong> is a digital collaboration between [X] map libraries and collections in the United States. From earliest year to latest year, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
+            <p><strong>Mapping a World of Cities</strong> is a digital collaboration between <em>number</em> map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
             
             <p><strong>Sponsored by</strong></p>
             
             <ul>
-            <li>Leventhal Map and Education Center at the Boston Public Library</li>
-            <li>MacLean Collection</li>
+            <li><a href="https://leventhalmap.org" target="_blank">Leventhal Map and Education Center at the Boston Public Library</a>, Massachusetts</li>
+            <li><a href="https://www.macleancollection.com" target="_blank">MacLean Collection Map Library</a>, Illinois</li>
             </ul>
             
             <p><strong>Contributors</strong></p>
             <ul>
-            <li>Verygood Map Collection</li>
-            <li>Histor Ical Library at the University of the Humanities</li>
-            </ul>`
+            <li><a href="https://library.harvard.edu/libraries/harvard-map-collection">Harvard Map Collection</a>, Massachusetts</li>
+			<li><a href="https://oshermaps.org">Osher Map Library & Smith Center for Cartographic Education</a>, Maine</li>
+
+			</ul>`
 		}
 	};
 
