@@ -8,7 +8,8 @@
   "license": "ISC",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "rm -rf build/* && parcel build src/index.html --public-url '.' && rsync -r -a -v -e ssh --delete dist/ geoservices@172.29.102.73:/var/www/geoservices/city-timeline/alpha/"
+    "build": "rm -rf build/* && parcel build src/index.html --public-url '.'",
+    "sync": "rsync -r -a -v -e ssh --delete dist/ geoservices@172.29.102.73:/var/www/geoservices/city-timeline/alpha/"
   },
   "dependencies": {
     "airtable": "^0.8.1",

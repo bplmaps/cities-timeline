@@ -109,8 +109,8 @@ function initialize(slides) {
             <p><strong>Contributors</strong></p>
             <ul>
             <li><a href="https://library.harvard.edu/libraries/harvard-map-collection">Harvard Map Collection</a>, Massachusetts</li>
+			<li><a href="https://loc.gov">Library of Congress</a>, Washington</li>
 			<li><a href="https://oshermaps.org">Osher Map Library & Smith Center for Cartographic Education</a>, Maine</li>
-
 			</ul>`
 		}
 	};
@@ -146,7 +146,7 @@ function parseSlide(s) {
 	var explodedDate = s.get('Position Date').split('-');
 	var jsonDate = { year: +explodedDate[0], month: +explodedDate[1], day: +explodedDate[2] };
 
-	var thumbnail = s.get('IIIF Endpoint') ? `${s.get('IIIF Endpoint')}/square/500,/0/default.jpg` : '';
+	var thumbnail = s.get('IIIF Endpoint') ? `${s.get('IIIF Endpoint')}/full/64,/0/default.jpg` : '';
 
 	if (s.get('IIIF Endpoint')) {
 		var caption = `<button class="zoom-button" data-iiif="${s.get('IIIF Endpoint')}">Zoom in</button>`;
