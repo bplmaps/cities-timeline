@@ -110,6 +110,7 @@ function initialize(slides) {
             <ul>
             <li><a href="https://library.harvard.edu/libraries/harvard-map-collection">Harvard Map Collection</a>, Massachusetts</li>
 			<li><a href="https://loc.gov">Library of Congress</a>, Washington</li>
+			<li><a href="https://clements.umich.edu">William L. Clements Library at the University of Michigan</a>, Michigan</li>
 			<li><a href="https://oshermaps.org">Osher Map Library & Smith Center for Cartographic Education</a>, Maine</li>
 			</ul>`
 		}
