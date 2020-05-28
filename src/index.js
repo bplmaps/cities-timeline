@@ -107,11 +107,13 @@ function initialize(slides) {
             </ul>
             
             <p><strong>Contributors</strong></p>
-            <ul>
+			<ul>
+			<li><a href="http://rumseymapcenter.stanford.edu">David Rumsey Map Center, Stanford Libraries</a>, California</li>
             <li><a href="https://library.harvard.edu/libraries/harvard-map-collection">Harvard Map Collection</a>, Massachusetts</li>
 			<li><a href="https://loc.gov">Library of Congress</a>, Washington</li>
-			<li><a href="https://clements.umich.edu">William L. Clements Library at the University of Michigan</a>, Michigan</li>
+			<li><a href="https://nypl.org">New York Public Library</a>, New York</li>
 			<li><a href="https://oshermaps.org">Osher Map Library & Smith Center for Cartographic Education</a>, Maine</li>
+			<li><a href="https://clements.umich.edu">William L. Clements Library at the University of Michigan</a>, Michigan</li>
 			</ul>`
 		}
 	};
