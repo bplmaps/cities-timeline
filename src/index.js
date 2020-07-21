@@ -108,6 +108,7 @@ function initialize(slides) {
             
             <p><strong>Contributors</strong></p>
 			<ul>
+			<li><a href="https://uwm.edu/libraries/agsl/">American Geographical Society Library, UW-Milwaukee</a>, Wisconsin</li>
 			<li><a href="http://rumseymapcenter.stanford.edu">David Rumsey Map Center, Stanford Libraries</a>, California</li>
             <li><a href="https://library.harvard.edu/libraries/harvard-map-collection">Harvard Map Collection</a>, Massachusetts</li>
 			<li><a href="https://loc.gov">Library of Congress</a>, Washington</li>
