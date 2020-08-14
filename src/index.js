@@ -96,7 +96,7 @@ function initialize(slides) {
 
             <p>Looking at maps helps us to understand the changing geography of urban life. Maps didn’t just serve as snapshots of how cities looked at one moment in time; in the form of plans, maps were also used to build, speculate, and fight over urban form. Historical maps reflect cities’ ethnic and economic transformations, systems of domination and oppression, sites of monumentality and squalor. They capture good times and bad, expansion, decay, and destruction. City dwellers take great pride in their cities, as part of a shared sense of place that is part of a historical trajectory. Maps tell the stories of a city’s past, present—and perhaps its future.</p>
             
-            <p><strong>Mapping a World of Cities</strong> is a digital collaboration between nine map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
+            <p><strong>Mapping a World of Cities</strong> is a digital collaboration between ten map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
             
             <p><strong>Sponsored by</strong></p>
             
