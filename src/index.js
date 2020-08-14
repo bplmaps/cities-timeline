@@ -1,5 +1,3 @@
-import './styles.scss';
-
 import Airtable from 'airtable';
 
 import 'ol/ol.css';
@@ -8,6 +6,7 @@ import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import IIIF from 'ol/source/IIIF';
 import IIIFInfo from 'ol/format/IIIFInfo';
+
 
 var zoomContainer = document.getElementById('zoom-container-outer');
 
@@ -97,7 +96,7 @@ function initialize(slides) {
 
             <p>Looking at maps helps us to understand the changing geography of urban life. Maps didn’t just serve as snapshots of how cities looked at one moment in time; in the form of plans, maps were also used to build, speculate, and fight over urban form. Historical maps reflect cities’ ethnic and economic transformations, systems of domination and oppression, sites of monumentality and squalor. They capture good times and bad, expansion, decay, and destruction. City dwellers take great pride in their cities, as part of a shared sense of place that is part of a historical trajectory. Maps tell the stories of a city’s past, present—and perhaps its future.</p>
             
-            <p><strong>Mapping a World of Cities</strong> is a digital collaboration between <em>number</em> map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
+            <p><strong>Mapping a World of Cities</strong> is a digital collaboration between nine map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
             
             <p><strong>Sponsored by</strong></p>
             
@@ -109,7 +108,8 @@ function initialize(slides) {
             <p><strong>Contributors</strong></p>
 			<ul>
 			<li><a href="http://rumseymapcenter.stanford.edu">David Rumsey Map Center, Stanford Libraries</a>, California</li>
-            <li><a href="https://library.harvard.edu/libraries/harvard-map-collection">Harvard Map Collection</a>, Massachusetts</li>
+			<li><a href="https://library.harvard.edu/libraries/harvard-map-collection">Harvard Map Collection</a>, Massachusetts</li>
+			<li><a href="https://jcblibrary.org">John Carter Brown Library</a>, Rhode Island</li>
 			<li><a href="https://loc.gov">Library of Congress</a>, Washington</li>
 			<li><a href="https://nypl.org">New York Public Library</a>, New York</li>
 			<li><a href="https://oshermaps.org">Osher Map Library & Smith Center for Cartographic Education</a>, Maine</li>
@@ -128,6 +128,7 @@ function initialize(slides) {
         if(!d.active){ timeline.add(d); d.active = true; }
        });
 		} else {
+			document.getElementById('region-filter').selectedIndex = 0;
 			timelineSlides.forEach(function(d) {
 				if (d.collection === c && !d.active) {
 					timeline.add(d);
@@ -137,6 +138,32 @@ function initialize(slides) {
 			// we have to do this loop twice so we don't potentially remove all the slides before we add any new ones back in; timeline doesn't like having no slides
 			timelineSlides.forEach(function(d) {
 				if (d.collection != c && d.active) {
+					timeline.removeId(d.unique_id);
+					d.active = false;
+				}
+			});
+		}
+	});
+
+
+	document.getElementById('region-filter').addEventListener('change', function() {
+		var c = this.value;
+
+		if (c === 'all') {
+      timelineSlides.forEach(function(d){
+        if(!d.active){ timeline.add(d); d.active = true; }
+       });
+		} else {
+			document.getElementById('collection-filter').selectedIndex = 0;
+			timelineSlides.forEach(function(d) {
+				if (d.region.includes(c) && !d.active) {
+					timeline.add(d);
+					d.active = true;
+				}
+			});
+
+			timelineSlides.forEach(function(d) {
+				if (!d.region.includes(c) && d.active) {
 					timeline.removeId(d.unique_id);
 					d.active = false;
 				}
@@ -161,6 +188,7 @@ function parseSlide(s) {
 		unique_id: s.get('ID').toString(),
 		collection: s.get('Contributing Institution'),
 		active: true,
+		region: s.get('Region'),
 		text: {
 			headline: fallback(s, 'Caption Title'),
 			text: `<p>${fallback(s, 'Caption')}</p>

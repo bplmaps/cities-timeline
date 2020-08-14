@@ -1,11 +1,12 @@
-@import url("https://use.typekit.net/vyz0urp.css");
+$serif: 'PT Serif';
+$sans: 'PT Sans';
+$narrow: 'PT Sans Narrow';
 
-$serif: williams-caslon-text, 'Georgia', serif;
+@import "~bulma";
 
 html, body {
   padding: 0px;
   margin: 0px;
-  font-family: $serif;
 }
 
 #wrapper {
@@ -20,25 +21,32 @@ html, body {
 
 header { 
   height: auto;
-  // font-family: 'Helvetica', sans-serif;
+  font-family: $sans;
   width: 100%;
-  background-color: rgba(236,236,228,1);
+  border-bottom: 1px solid #204051;
+  color: #3b6978;
 }
 
-header #collection-filter {
+header #filters {
   float: right;
-  margin: 10px 20px;
+  margin: 5px 10px 5px 0;
+}
+
+header #filter-label {
+  font-size: 0.9em;
+  position: relative;
+  top: 3px;
+  font-family: $narrow;
 }
 
 h1 {
-  font-size: 1.1em;
+  font-size: 1.2em;
   padding: 0;
-  margin: 10px 20px;
+  margin: 5px 0 0 20px;
   display: inline-block;
   float: left;
-  font-weight: normal;
-  font-style: italic;
-  letter-spacing: 0.03em;
+  font-weight: bold;
+  color: #3b6978
 }
 
 h2.tl-headline-title {
@@ -79,12 +87,14 @@ h2.tl-headline-title {
 
 #app {
   width: 100%;
+  margin: 20px 0 0 0;
   flex: 1 1 auto;
 }
 
 p.citation {
   line-height: 1.3em;
-  font-size: 0.9em;
+  font-size: 0.9em !important;
+  color: #444;
 }
 
 .object-title {
@@ -118,17 +128,17 @@ p.citation {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(49, 49, 49, 0.9);
+  background-color: rgba(49, 49, 49, 0.95);
   z-index: 9999;
   display: none;
 }
 
 #zoom-container-inner {
   position: absolute;
-  top: 5%;
-  left: 5%;
-  right: 5%;
-  bottom: 5%;
+  top: 45px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
   background-color: black;
   border-radius: 9px;
   padding: 10px;
@@ -146,16 +156,23 @@ p.citation {
 
 #zoom-closer {
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 20px;
+  top: 10px;
   color: white;
   font-family: 'Helvetica',sans-serif;
   font-weight: bold;
   cursor: pointer;
+  border: 1px solid white;
+  border-radius: 2px;
+  padding: 1px 4px;
+}
+
+#zoom-closer:hover {
+  background-color: rgba(255,255,255,0.2);
 }
 
 button.zoom-button {
-  background-color: rgb(65, 100, 78);
+  background-color: #3b6978;
   border: none;
   border-radius: 3px;
   color: white;
@@ -166,4 +183,35 @@ button.zoom-button {
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
+}
+
+button.zoom-button:hover {
+  background-color: #29454e;
+}
+
+.tl-timeline h2.tl-headline-title {
+  font-size: 2.0em !important;
+  letter-spacing: 0.05em;
+}
+
+.tl-text h2.tl-headline-title, .tl-text h2.tl-headline {
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+}
+
+.tl-media {
+  padding-bottom: 50px;
+}
+
+@media all and (max-width: 650px) {
+
+header #filters { float: none;
+   width: 100%;
+  margin-left: 20px; }
+
+header #filter-label { display: none; }
+
+h1 {
+  display: none;
+}
 }

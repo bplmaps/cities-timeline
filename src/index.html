@@ -3,9 +3,10 @@
     <head>
         <title>Mapping a World of Cities</title>
         <meta charset="utf-8">
-        <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
-        <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
-        
+        <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/3.7.4/css/timeline.css">
+        <script src="https://cdn.knightlab.com/libs/timeline3/3.7.4/js/timeline.js"></script>
+        <link rel="stylesheet" href="./styles.scss">
+
     </head>
     <body>
         <div id="wrapper">
@@ -18,18 +19,38 @@
             </div>
             <header><h1>Mapping a World of Cities</h1>
 
-            <select name="collection-filter" id="collection-filter">
-                <option value="all">Show All Collections</option>
-                <option value="William L. Clements Library at the University of Michigan">Clements</option>
-                <option value="Harvard Map Collection">Harvard</option>
-                <option value="Leventhal Map & Education Center">Leventhal</option>
-                <option value="Library of Congress">Library of Congress</option>
-                <option value="MacLean Collection">MacLean</option>
-                <option value="New York Public Library">NYPL</option>
-                <option value="Osher Map Library and Smith Center for Cartographic Education">Osher</option>
-                <option value="David Rumsey Map Center, Stanford Libraries">Rumsey</option>
-                
-            </select></header>
+                <div id="filters">
+                    <span id="filter-label">Filters</span>
+                <div class="select is-small">
+                    <select name="collection-filter" id="collection-filter">
+                        <option value="all">All Collections</option>
+                        <option value="William L. Clements Library at the University of Michigan">Clements</option>
+                        <option value="Harvard Map Collection">Harvard</option>
+                        <option value="John Carter Brown Library">John Carter Brown</option>
+                        <option value="Leventhal Map & Education Center">Leventhal</option>
+                        <option value="Library of Congress">Library of Congress</option>
+                        <option value="MacLean Collection">MacLean</option>
+                        <option value="New York Public Library">NYPL</option>
+                        <option value="Osher Map Library and Smith Center for Cartographic Education">Osher</option>
+                        <option value="David Rumsey Map Center, Stanford Libraries">Rumsey</option>
+                    </select>
+                  </div>
+                  
+                  <div class="select is-small">
+                    <select name="region-filter" id="region-filter">
+                        <option value="all">All Regions</option>
+                        <option value="North America">North America</option>
+                        <option value="South America">Central & South America</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Europe">Europe</option>
+
+                        </select>
+                  </div>
+                </div>
+        
+        
+        </header>
         <div id="app">
         </div>
     </div>
