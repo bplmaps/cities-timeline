@@ -9,11 +9,12 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "rm -rf build/* && parcel build src/index.html --public-url '.'",
-    "sync": "rsync -r -a -v -e ssh --delete dist/ geoservices@172.29.102.73:/var/www/geoservices/city-timeline/alpha/"
+    "sync": "rsync -r -a -v -e ssh --delete dist/ geoservices@172.29.102.73:/home/bartlett/devsite/public/projects/mapping-a-world-of-cities/"
   },
   "dependencies": {
     "airtable": "^0.8.1",
     "bulma": "^0.9.0",
+    "markdown-it": "^11.0.0",
     "ol": "^6.3.1"
   },
   "devDependencies": {

@@ -7,12 +7,19 @@ import TileLayer from 'ol/layer/Tile';
 import IIIF from 'ol/source/IIIF';
 import IIIFInfo from 'ol/format/IIIFInfo';
 
+import MarkdownIt from 'markdown-it';
+
+
 
 var zoomContainer = document.getElementById('zoom-container-outer');
-
 var zoomInitialized = false;
+var layer;
+var map;
+var timeline;
 
-var database = new Airtable({ apiKey: 'key10KeIIPJpM8npJ' }).base('appFHShc770eIgtu9');
+var md = new MarkdownIt({typographer: true});
+
+var database = new Airtable({ apiKey: 'keyT7EMVMg51WfSlL' }).base('appFHShc770eIgtu9');
 
 database('Timeline Objects')
 	.select({ view: 'Grid view', filterByFormula: "{Status} = 'Published'" })
@@ -21,8 +28,7 @@ database('Timeline Objects')
 		initialize(result);
 	});
 
-var layer;
-var map;
+
 
 function loadZoomable(imageInfoUrl) {
 	fetch(imageInfoUrl)
@@ -79,6 +85,10 @@ document.addEventListener(
 		if (event.target.matches('#zoom-closer')) {
 			zoomContainer.style.display = 'none';
 		}
+
+		if(event.target.matches("#header-title")) {
+			timeline.goTo(0);
+		}
 	},
 	false
 );
@@ -96,7 +106,9 @@ function initialize(slides) {
 
             <p>Looking at maps helps us to understand the changing geography of urban life. Maps didn’t just serve as snapshots of how cities looked at one moment in time; in the form of plans, maps were also used to build, speculate, and fight over urban form. Historical maps reflect cities’ ethnic and economic transformations, systems of domination and oppression, sites of monumentality and squalor. They capture good times and bad, expansion, decay, and destruction. City dwellers take great pride in their cities, as part of a shared sense of place that is part of a historical trajectory. Maps tell the stories of a city’s past, present—and perhaps its future.</p>
             
-            <p><strong>Mapping a World of Cities</strong> is a digital collaboration between ten map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
+			<p><strong>Mapping a World of Cities</strong> is a digital collaboration between ten map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
+
+			<p>Though these maps tell many stories about the history of urbanization, they also invite us to question what has been left out. Large and famous cities have been mapped more often and more prominently than small cities or those at the margins of power. Map libraries and collections in the United States tend to have a disproportionate focus on places in Europe and the Americas, and nearly all of these maps are drawn by white, male cartographers working for governments or empires. As you look at these maps, consider what is hidden on the maps themselves, as well as the many cultures of urban development that have taken place in cities for which we have fewer historic objects in our official cartographic record.</p>
             
             <p><strong>Sponsored by</strong></p>
             
@@ -119,7 +131,12 @@ function initialize(slides) {
 		}
 	};
 
-	var timeline = new TL.Timeline('app', { title: title, events: timelineSlides });
+	timeline = new TL.Timeline('app', { 
+		title: title,
+		events: timelineSlides,
+	 }, {
+		initial_zoom: 4
+	 });
 
 	document.getElementById('collection-filter').addEventListener('change', function() {
 		var c = this.value;
@@ -192,7 +209,7 @@ function parseSlide(s) {
 		region: s.get('Region'),
 		text: {
 			headline: fallback(s, 'Caption Title'),
-			text: `<p>${fallback(s, 'Caption')}</p>
+			text: `<p>${md.render(fallback(s, 'Caption'))}</p>
         <p class="citation"><span class="object-title">${s.get(
 			'Object Title'
 		)}</span><br><span class="object-creator">${s.get(
