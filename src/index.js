@@ -109,7 +109,7 @@ function initialize(slides) {
 			<p><strong>Mapping a World of Cities</strong> is a digital collaboration between ten map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
 
 			<p>Though these maps tell many stories about the history of urbanization, they also invite us to question what has been left out. Large and famous cities have been mapped more often and more prominently than small cities or those at the margins of power. Map libraries and collections in the United States tend to have a disproportionate focus on places in Europe and the Americas, and nearly all of these maps are drawn by white, male cartographers working for governments or empires. As you look at these maps, consider what is hidden on the maps themselves, as well as the many cultures of urban development that have taken place in cities for which we have fewer historic objects in our official cartographic record.</p>
-            
+            <img src="./logo-banner.png" alt="Institution logos" id="logo-banner">
             <p><strong>Sponsored by</strong></p>
             
             <ul>
