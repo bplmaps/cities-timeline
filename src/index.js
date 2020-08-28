@@ -9,8 +9,6 @@ import IIIFInfo from 'ol/format/IIIFInfo';
 
 import MarkdownIt from 'markdown-it';
 
-
-
 var zoomContainer = document.getElementById('zoom-container-outer');
 var zoomInitialized = false;
 var layer;
@@ -43,6 +41,8 @@ function loadZoomable(imageInfoUrl) {
 					}
 					options.zDirection = -1;
 					var iiifTileSource = new IIIF(options);
+					layer.setSource(null);
+					map.setView(new View({center: [0,0]}));
 					layer.setSource(iiifTileSource);
 					map.setView(
 						new View({
@@ -104,12 +104,12 @@ function initialize(slides) {
 			headline: 'Mapping a World of Cities',
 			text: `<p>How, where, and why do cities develop? Maps are one of our best tools for answering these questions. Cities are founded and grow in particular locations, driven by geographical features like fresh water or deep harbors as well as historical events like royal charters or speculators’ claims. From the earliest walled towns, individuals and families living in close proximity to one another have shaped urban form by building infrastructure and common space according to their economic, cultural, religious, and military needs. With the rise of nations, empires, and trading networks, cities became linked together, both with other cities and with their own hinterlands.</p>
 
-            <p>Looking at maps helps us to understand the changing geography of urban life. Maps didn’t just serve as snapshots of how cities looked at one moment in time; in the form of plans, maps were also used to build, speculate, and fight over urban form. Historical maps reflect cities’ ethnic and economic transformations, systems of domination and oppression, sites of monumentality and squalor. They capture good times and bad, expansion, decay, and destruction. City dwellers take great pride in their cities, as part of a shared sense of place that is part of a historical trajectory. Maps tell the stories of a city’s past, present—and perhaps its future.</p>
+            <p>Looking at maps helps us to understand the changing geography of urban life. Maps didn’t just serve as snapshots of how cities looked at one moment in time; in the form of plans, maps were also used to build, speculate, and fight over urban form. Historical maps reflect cities’ ethnic and economic transformations, systems of domination and oppression, sites of monumentality and squalor. They capture good times and bad, expansion, decay, and destruction. City dwellers take great pride in their cities, as part of a shared sense of place that embedded in a historical trajectory. Maps tell the stories of a city’s past, present—and perhaps its future.</p>
             
-			<p><strong>Mapping a World of Cities</strong> is a digital collaboration between ten map libraries and collections in the United States. Covering more than three centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
+			<p><strong>Mapping a World of Cities</strong> is a digital collaboration between ten map libraries and collections in the United States. Covering four centuries, these maps show how world cities changed alongside the changing art and science of cartography. Explore the maps and images, and click through to the host institutions’ pages for more collections.</p>
 
 			<p>Though these maps tell many stories about the history of urbanization, they also invite us to question what has been left out. Large and famous cities have been mapped more often and more prominently than small cities or those at the margins of power. Map libraries and collections in the United States tend to have a disproportionate focus on places in Europe and the Americas, and nearly all of these maps are drawn by white, male cartographers working for governments or empires. As you look at these maps, consider what is hidden on the maps themselves, as well as the many cultures of urban development that have taken place in cities for which we have fewer historic objects in our official cartographic record.</p>
-            <img src="./logo-banner.png" alt="Institution logos" id="logo-banner">
+            
             <p><strong>Sponsored by</strong></p>
             
             <ul>
@@ -127,7 +127,8 @@ function initialize(slides) {
 			<li><a href="https://nypl.org">New York Public Library</a>, New York</li>
 			<li><a href="https://oshermaps.org">Osher Map Library & Smith Center for Cartographic Education</a>, Maine</li>
 			<li><a href="https://clements.umich.edu">William L. Clements Library at the University of Michigan</a>, Michigan</li>
-			</ul>`
+			</ul>
+			<img src="./logo-banner.png" alt="Institution logos" id="logo-banner">`
 		}
 	};
 

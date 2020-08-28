@@ -72,6 +72,13 @@ h2.tl-headline-title {
 
 .tl-text ul {
   margin-bottom: 16px !important;
+  margin-left: 0;
+  padding-left: 0 !important;
+}
+
+.tl-text li {
+  margin: 0;
+  padding: 0;
 }
 
 .tl-headline-date {
