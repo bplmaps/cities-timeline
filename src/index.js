@@ -203,6 +203,12 @@ function parseSlide(s) {
 		var caption = '';
 	}
 
+	if( s.get('Caption Credit') ) {
+		var captionCredit = `<p class="caption-credit">${s.get('Caption Credit')}</p>`
+	} else {
+		var captionCredit = '';
+	}
+
 	return {
 		unique_id: s.get('ID').toString(),
 		collection: s.get('Contributing Institution'),
@@ -211,6 +217,7 @@ function parseSlide(s) {
 		text: {
 			headline: fallback(s, 'Caption Title'),
 			text: `<p>${md.render(fallback(s, 'Caption'))}</p>
+			${captionCredit}
         <p class="citation"><span class="object-title">${s.get(
 			'Object Title'
 		)}</span><br><span class="object-creator">${s.get(

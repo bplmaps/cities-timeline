@@ -99,6 +99,16 @@ h2.tl-headline-title {
   flex: 1 1 auto;
 }
 
+p.caption-credit {
+  font-size: 0.9em !important;
+  color: #888;
+  font-style: italic;
+  &::before {
+    content: "▸ ";
+    font-style: normal;
+  }
+}
+
 p.citation {
   line-height: 1.3em;
   font-size: 0.9em !important;

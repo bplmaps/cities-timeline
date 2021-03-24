@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "rm -rf build/* && parcel build src/index.html --public-url '.'",
-    "sync": "rsync -r -a -v -e ssh --delete dist/ geoservices@172.29.102.73:/home/bartlett/devsite/public/projects/mapping-a-world-of-cities/"
+    "sync": "rsync -r -a -v -e ssh --delete dist/ geoservices@$GEOSERVICES_IP:/var/www/lmec-main-site/public/projects/mapping-a-world-of-cities/"
   },
   "dependencies": {
     "airtable": "^0.8.1",
