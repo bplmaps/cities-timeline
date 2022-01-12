@@ -14,7 +14,7 @@
   "dependencies": {
     "airtable": "^0.8.1",
     "bulma": "^0.9.0",
-    "markdown-it": "^11.0.0",
+    "markdown-it": "^12.3.2",
     "ol": "^6.4.3"
   },
   "devDependencies": {
