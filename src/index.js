@@ -17,7 +17,7 @@ var timeline;
 
 var md = new MarkdownIt({typographer: true});
 
-var database = new Airtable({ apiKey: 'keyT7EMVMg51WfSlL' }).base('appFHShc770eIgtu9');
+var database = new Airtable({ apiKey: 'patKbIbV7dpggoBlL.05ace3312894897e01c0ee5d015a60d7a167824dffe53fcb795e7787c15491b4' }).base('appFHShc770eIgtu9');
 
 database('Timeline Objects')
 	.select({ view: 'Grid view', filterByFormula: "{Status} = 'Published'" })
